@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("Basic .NET")>
+<Assembly: AssemblyTitle("Basic.NET")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Basic .NET")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
+<Assembly: AssemblyProduct("Basic.NET")>
+<Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-<Assembly: Guid("a306fd87-e474-495b-8a76-20cfe29f82fa")>
+<Assembly: Guid("56706954-881c-41fa-bd4c-5f0a54d2afd9")>
 
 ' La información de versión de un ensamblado consta de los cuatro valores siguientes:
 '

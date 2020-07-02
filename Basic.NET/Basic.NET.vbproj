@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46B99180-8300-46D6-8AD1-FBFDC7B9515C}</ProjectGuid>
+    <ProjectGuid>{A4C1FA36-E4DD-44E4-9F8E-CEA5803882AD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>Basic.NET.My.MyApplication</StartupObject>
     <RootNamespace>Basic.NET</RootNamespace>
@@ -48,9 +48,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>..\..\..\..\Downloads\Useful VS Things\DLLs\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JacksonSoft.CustomTabControl">
+      <HintPath>..\..\..\..\Downloads\Useful VS Things\DLLs\JacksonSoft.CustomTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="SkinFramework">
+      <HintPath>..\..\..\..\Downloads\skinframework_src\SkinFramework.Test\bin\Debug\SkinFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -73,17 +83,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomWindow.Designer.vb">
+      <DependentUpon>CustomWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -103,11 +113,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomWindow.resx">
+      <DependentUpon>CustomWindow.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -127,6 +137,24 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MinimizeApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseApp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basic.NET Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basic.NET Logo Small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basic.NET Logo Small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Basic.NET Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

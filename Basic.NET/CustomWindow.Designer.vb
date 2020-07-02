@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class CustomWindow
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,13 +24,14 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'Form2
+        'CustomWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(306, 249)
-        Me.Name = "Form2"
-        Me.Text = "Form1"
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
+        Me.Name = "CustomWindow"
         Me.ResumeLayout(False)
 
     End Sub
