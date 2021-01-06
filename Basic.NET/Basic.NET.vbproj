@@ -57,6 +57,9 @@
     <Reference Include="SkinFramework">
       <HintPath>..\..\..\..\Downloads\skinframework_src\SkinFramework.Test\bin\Debug\SkinFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Storm.TextEditor">
+      <HintPath>D:\EZE\Documents\storm\bin\Storm.TextEditor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -83,6 +86,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayUtils.vb" />
     <Compile Include="CustomWindow.Designer.vb">
       <DependentUpon>CustomWindow.vb</DependentUpon>
     </Compile>
@@ -111,6 +115,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SolutionModule.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CustomWindow.resx">

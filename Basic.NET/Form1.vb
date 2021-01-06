@@ -1,4 +1,5 @@
-﻿Public Class Form1
+﻿Imports SlnUtils
+Public Class Form1
 
 #Region "Drag"
 
@@ -6,7 +7,7 @@
     Dim posY As Integer
     Dim drag As Boolean
 
-    Private Sub panel1_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Panel1.MouseDoubleClick
+    Private Sub panel1_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         If e.Button = MouseButtons.Left Then
             If maximized Then
                 Me.WindowState = FormWindowState.Normal
@@ -18,7 +19,7 @@
         End If
     End Sub
 
-    Private Sub panel1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Panel1.MouseDown
+    Private Sub panel1_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         If e.Button = MouseButtons.Left Then
             drag = True
             posX = Cursor.Position.X - Me.Left
@@ -26,11 +27,11 @@
         End If
     End Sub
 
-    Private Sub panel1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Panel1.MouseUp
+    Private Sub panel1_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         drag = False
     End Sub
 
-    Private Sub panel1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Panel1.MouseMove
+    Private Sub panel1_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs)
         If drag Then
             Me.Top = Cursor.Position.Y - posY
             Me.Left = Cursor.Position.X - posX
@@ -63,8 +64,8 @@
     Dim onFullScreen As Boolean
     Dim maximized As Boolean
     Dim on_MinimumSize As Boolean
-    Dim minimumWidth As Short = 350
-    Dim minimumHeight As Short = 26
+    Dim minimumWidth As Short = 733
+    Dim minimumHeight As Short = 543
     Dim borderSpace As Short = 20
     Dim borderDiameter As Short = 3
 
@@ -230,6 +231,26 @@
         buttonMin.Location = New Point(Panel1.Width - 63, 3)
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RecentList.ItemHeight = 15
+    End Sub
 
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
+        CreatePanel.Hide()
+        MainPanel.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        ' TODO Add project creation code
+    End Sub
+
+    Private Sub Button4_Click_1(sender As Object, e As EventArgs) Handles Button4.Click
+
+    End Sub
+
+    Private Sub ChooseFolderButton_Click(sender As Object, e As EventArgs) Handles ChooseFolderButton.Click
+        If ChooseFolderDialog.ShowDialog() = DialogResult.OK Then
+            Dim readedSln = ReadSln(ChooseFolderDialog.SelectedPath)
+            LoadSln(readedSln)
+        End If
     End Sub
 End Class
